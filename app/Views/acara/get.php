@@ -52,8 +52,14 @@
                                 <td><?= date('d/m/y', strtotime($value->date_acara)) ?></td>
                                 <td><?= $value->info_acara ?></td>
                                 <td class="text-center" style="width:15%">
-                                    <a href="" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                    <a href="<?= site_url('acara/edit/' . $value->id_acara) ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                                    <form action="<?= site_url('acara/' . $value->id_acara) ?>" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data?')">
+                                        <?= csrf_field() ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
