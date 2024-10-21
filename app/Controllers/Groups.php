@@ -8,6 +8,7 @@ use App\Models\GroupModel;
 
 class Groups extends ResourcePresenter
 {
+    // protected $helpers = ['custom'];
     function __construct()
     {
         $this->group = new GroupModel(); // Inisialisasi properti $group di konstruktor
