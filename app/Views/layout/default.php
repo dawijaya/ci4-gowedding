@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>/template/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 
-  <!-- CSS Libraries -->
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="<?= base_url() ?>/template/assets/css/style.css">
@@ -232,7 +231,7 @@
                 <i class="fas fa-cog"></i> Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <a href="<?= site_url('auth/logout') ?>" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </div>
@@ -264,7 +263,7 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2024 <div class="bullet"></div> Develop By <a href="https://nauval.in/">Dandi Agus Wijaya</a>
+          Copyright &copy; 2024 <div class="bullet"></div> Develop By <a href="https://nauval.in/">GoWedding</a>
         </div>
         <div class="footer-right">
           v1.0
