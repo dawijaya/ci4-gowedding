@@ -1,4 +1,3 @@
-// app/Helpers/custom_helper.php
 <?php
 
 function userLogin()

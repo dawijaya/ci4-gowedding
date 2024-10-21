@@ -109,6 +109,8 @@ class Filters extends BaseFilters
             'before' =>
             [
                 '/',
+                'home',
+                'home/*',
                 'acara',
                 'acara/*',
                 'groups/*',

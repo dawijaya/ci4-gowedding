@@ -13,6 +13,7 @@ $routes->get('create-db', function () {
 });
 
 $routes->get('/', 'Home::index');
+$routes->get('/home', 'Home::index');
 $routes->get('acara', 'acara::index');
 $routes->get('acara/add', 'acara::create');
 $routes->post('acara', 'acara::store');
