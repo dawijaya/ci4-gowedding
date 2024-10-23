@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2024 at 02:41 PM
+-- Generation Time: Oct 23, 2024 at 04:25 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -61,6 +61,24 @@ CREATE TABLE `contacts` (
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id_contact`, `nama_contact`, `nama_alias`, `phone`, `email`, `address`, `info_contact`, `id_group`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Harmon Fahey', NULL, '1-435-774-5475', 'esteban.gusikowski@yahoo.com', '8252 Fadel Junctions\nKundeberg, AR 17546-7173', NULL, 3, NULL, NULL, NULL),
+(2, 'Cawisono Opung Nashiruddin S.T.', NULL, '0553 0052 6470', 'cpranowo@gmail.co.id', 'Kpg. Bagonwoto  No. 145, Sukabumi 21007, Gorontalo', NULL, 3, '2024-10-23 21:17:32', NULL, NULL),
+(3, 'Siska Yulianti', NULL, '(+62) 557 9556 595', 'jelita62@yahoo.co.id', 'Gg. Ters. Pasir Koja No. 897, Ternate 77528, DKI', NULL, 3, '2024-10-23 21:20:14', NULL, NULL),
+(4, 'Asman Saragih', NULL, '(+62) 678 8899 6496', 'kayun45@gmail.co.id', 'Ds. Cikapayang No. 965, Magelang 28849, Sumsel', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(5, 'Gara Wahyudin', NULL, '(+62) 800 4614 5228', 'gunarto.harja@yahoo.com', 'Jr. Abdul Rahmat No. 459, Palopo 70374, Kalbar', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(6, 'Raina Yuniar', NULL, '021 4244 0612', 'rsiregar@gmail.co.id', 'Psr. PHH. Mustofa No. 300, Semarang 19213, Kalbar', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(7, 'Cawisadi Wasita', NULL, '(+62) 476 9813 7264', 'zelaya15@gmail.co.id', 'Gg. Laswi No. 64, Lubuklinggau 42847, Pabar', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(8, 'Gawati Yulianti', NULL, '0876 390 878', 'rahmawati.ilyas@yahoo.com', 'Dk. Baing No. 691, Yogyakarta 37908, Aceh', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(9, 'Laila Uyainah', NULL, '(+62) 503 8585 601', 'oktaviani.jono@yahoo.co.id', 'Dk. Flores No. 503, Palembang 67045, Bali', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(10, 'Siska Agustina', NULL, '025 6222 342', 'martaka.nashiruddin@gmail.co.id', 'Ds. R.E. Martadinata No. 507, Kediri 11056, Papua', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(11, 'Yono Latupono', NULL, '(+62) 553 6504 4023', 'hani02@gmail.co.id', 'Psr. Halim No. 857, Administrasi Jakarta Pusat 60290, Jambi', NULL, 3, '2024-10-23 21:22:07', NULL, NULL),
+(12, 'Purwanto Luhung Sihotang', NULL, '(+62) 549 3360 625', 'purwa78@yahoo.co.id', 'Ki. Eka No. 374, Palangka Raya 83397, Babel', NULL, 3, '2024-10-23 21:22:07', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -182,7 +200,7 @@ ALTER TABLE `acara`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id_contact` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_contact` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `groups`
