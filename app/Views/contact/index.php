@@ -1,6 +1,6 @@
 <?= $this->extend('layout/default') ?>
 <?= $this->section('title') ?>
-<title>Data Contacts Kontak &mdash; Go Wedding </title>
+<title>Data Kontak &mdash; Go Wedding </title>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <section class="section">

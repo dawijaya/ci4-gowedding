@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2024 at 12:24 PM
+-- Generation Time: Oct 23, 2024 at 02:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,6 +41,26 @@ CREATE TABLE `acara` (
 INSERT INTO `acara` (`id_acara`, `nama_acara`, `date_acara`, `info_acara`) VALUES
 (1, 'Dandi', '2024-09-01', 'Dandi Agus Wiiaya'),
 (8, 'AAgusgus wijaya', '2024-11-01', 'dnadi\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id_contact` bigint(20) UNSIGNED NOT NULL,
+  `nama_contact` varchar(60) NOT NULL,
+  `nama_alias` varchar(60) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `info_contact` text DEFAULT NULL,
+  `id_group` bigint(20) UNSIGNED NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -89,7 +109,8 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
 (2, '2024-09-29-181146', 'App\\Database\\Migrations\\Acara', 'default', 'App', 1727633845, 1),
 (3, '2024-10-07-014551', 'App\\Database\\Migrations\\Createuser', 'default', 'App', 1728372685, 2),
-(4, '2024-10-12-041440', 'App\\Database\\Migrations\\CreateGroups', 'default', 'App', 1728792891, 3);
+(4, '2024-10-12-041440', 'App\\Database\\Migrations\\CreateGroups', 'default', 'App', 1728792891, 3),
+(6, '2024-10-23-121115', 'App\\Database\\Migrations\\CreateContacts', 'default', 'App', 1729686663, 4);
 
 -- --------------------------------------------------------
 
@@ -123,6 +144,13 @@ ALTER TABLE `acara`
   ADD PRIMARY KEY (`id_acara`);
 
 --
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id_contact`),
+  ADD KEY `contacts_id_group_foreign` (`id_group`);
+
+--
 -- Indexes for table `groups`
 --
 ALTER TABLE `groups`
@@ -151,6 +179,12 @@ ALTER TABLE `acara`
   MODIFY `id_acara` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id_contact` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -160,13 +194,23 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id_user` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD CONSTRAINT `contacts_id_group_foreign` FOREIGN KEY (`id_group`) REFERENCES `groups` (`id_groups`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
