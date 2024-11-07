@@ -37,7 +37,7 @@
             </div>
             <div class="table-responsive">
                 <table class="table table-striped table-md">
-                    <tbody>
+                    <thead>
                         <tr>
                             <th>No</th>
                             <th>Nama Acara</th>
@@ -45,6 +45,8 @@
                             <th>Info</th>
                             <th class="text-center">Action</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <?php foreach ($acara as $key => $value) : ?>
                             <tr>
                                 <td><?= $key + 1 ?></td>

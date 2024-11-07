@@ -4,10 +4,19 @@ namespace App\Controllers;
 
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\GroupModel;
+use App\Models\ContactModel;
 
 class Contacts extends ResourceController
 {
     protected $helpers = ['custom'];
+
+    function __construct()
+    {
+        $this->group = new GroupModel(); // Inisialisasi properti $group di konstruktor
+        $this->contact = new ContactModel(); // Inisialisasi properti $group di konstruktor
+    }
+
     /**
      * Return an array of resource objects, themselves in array format.
      *
@@ -15,7 +24,8 @@ class Contacts extends ResourceController
      */
     public function index()
     {
-        return view('contact/index');
+        $data['contacts'] = $this->contact->getAll();
+        return view('contact/index', $data);
     }
 
     /**

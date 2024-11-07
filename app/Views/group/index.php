@@ -39,35 +39,36 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped table-md">
-                    <tbody>
+                <tbody class="table table-striped table-md">
+                    <thead>
                         <tr>
                             <th>No</th>
                             <th>Nama Group</th>
                             <th>Info</th>
                             <th class="text-center">Action</th>
                         </tr>
-                        <?php foreach ($groups as $key => $value) : ?>
-                            <tr>
-                                <td><?= $key + 1 ?></td>
-                                <td><?= $value->nama_groups ?></td>
-                                <td><?= $value->info_groups ?></td>
-                                <td class="text-center" style="width:15%">
-                                    <a href="<?= site_url('groups/edit/' . $value->id_groups) ?>" class="btn btn-warning btn-sm">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </a>
-                                    <form action="<?= site_url('groups/delete/' . $value->id_groups) ?>" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data?')">
-                                        <?= csrf_field() ?>
-                                        <button class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
+                    </thead>
+                <tbody>
+                    <?php foreach ($groups as $key => $value) : ?>
+                        <tr>
+                            <td><?= $key + 1 ?></td>
+                            <td><?= $value->nama_groups ?></td>
+                            <td><?= $value->info_groups ?></td>
+                            <td class="text-center" style="width:15%">
+                                <a href="<?= site_url('groups/edit/' . $value->id_groups) ?>" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <form action="<?= site_url('groups/delete/' . $value->id_groups) ?>" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data?')">
+                                    <?= csrf_field() ?>
+                                    <button class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
 
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
             </div>
         </div>
     </div>
