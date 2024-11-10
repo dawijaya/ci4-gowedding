@@ -19,12 +19,38 @@
                 <form action="<?= site_url('contacts') ?>" method="post" autocomplete="off">
                     <?= csrf_field() ?>
                     <div class="form-group">
-                        <label>Nama Kontak</label>
-                        <input type="text" name="nama_contacts" class="form-control" required autofocus>
+                        <label>Group *</label>
+                        <select name="id_group" class="form-control" required>
+                            <option value="" hidden> </option>
+                            <?php foreach ($groups as $key => $value) : ?>
+                                <option value="<?= $value->id_groups ?>"><?= $value->nama_groups ?></option>
+                            <?php endforeach; ?>
+
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>info</label>
-                        <textarea name="info_contacts" class="form-control"></textarea>
+                        <label>Nama Kontak *</label>
+                        <input type="text" name="nama_contact" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Alias</label>
+                        <input type="text" name="nama_alias" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Telepon</label>
+                        <input type="number" name="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <textarea name="address" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>info (Kota / Instansi / dll)</label>
+                        <textarea name="info_contact" class="form-control"></textarea>
                     </div>
                     <div class="form-group ">
                         <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i>Save</button>

@@ -9,7 +9,7 @@ class ContactModel extends Model
     protected $table      = 'contacts';
     protected $primaryKey = 'id_contact'; // Perbaikan typo
     protected $returnType = 'object';
-    protected $allowedFields = ['nama_contact', 'info_alias', 'phone', 'email', 'address', 'info_contact', 'id_group']; // ganti allowFields dengan allowedFields
+    protected $allowedFields = ['nama_contact', 'nama_alias', 'phone', 'email', 'address', 'info_contact', 'id_group']; // ganti allowFields dengan allowedFields
     protected $useTimestamps = true;
     protected $useSoftDeletes = false;
 

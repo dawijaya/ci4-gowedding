@@ -11,6 +11,7 @@ class Contacts extends ResourceController
 {
     protected $helpers = ['custom'];
 
+
     function __construct()
     {
         $this->group = new GroupModel(); // Inisialisasi properti $group di konstruktor
@@ -47,7 +48,8 @@ class Contacts extends ResourceController
      */
     public function new()
     {
-        return view('contact/new');
+        $data['groups'] = $this->group->findAll();
+        return view('contact/new', $data);
     }
 
     /**
@@ -57,7 +59,9 @@ class Contacts extends ResourceController
      */
     public function create()
     {
-        //
+        $data = $this->request->getPost();
+        $this->contact->insert($data); // ganti $this->model menjadi $this->group
+        return redirect()->to(site_url('contacts'))->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
