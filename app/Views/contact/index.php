@@ -65,11 +65,12 @@
                                 <td><?= $value->info_contact ?></td>
                                 <td><?= $value->nama_groups ?></td>
                                 <td class="text-center" style="width:15%">
-                                    <a href="<?= site_url('contacts/edit/' . $value->id_contact) ?>" class="btn btn-warning btn-sm">
+                                    <a href="<?= site_url('contacts/' . $value->id_contact . '/edit') ?>" class="btn btn-warning btn-sm">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <form action="<?= site_url('contacts/delete/' . $value->id_contact) ?>" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data?')">
+                                    <form action="<?= site_url('contacts/' . $value->id_contact) ?>" method="post" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data?')">
                                         <?= csrf_field() ?>
+                                        <input type="hidden" name="_method" value="DELETE">
                                         <button class="btn btn-danger btn-sm">
                                             <i class="fas fa-trash"></i>
                                         </button>
